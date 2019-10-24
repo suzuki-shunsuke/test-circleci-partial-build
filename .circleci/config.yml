@@ -7,11 +7,11 @@ jobs:
     steps:
     - checkout
     - run:
-      command: |
-        apk add git
-        if git diff --name-only master $CIRCLE_SHA1 foo |
-        if ! git diff --quiet master $CIRCLE_SHA1 foo; then
-          echo "foo is updated"
-        else
-          echo "foo isn't updated"
-        fi
+        command: |
+          apk add git
+          if git diff --name-only master $CIRCLE_SHA1 foo |
+          if ! git diff --quiet master $CIRCLE_SHA1 foo; then
+            echo "foo is updated"
+          else
+            echo "foo isn't updated"
+          fi
